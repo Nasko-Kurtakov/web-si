@@ -22,8 +22,8 @@ function login()
     if ($dbUser) {
         $user = new User($dbUser["name"], $dbUser["email"]);
 
-        $_SESSION["userName"] = $user->getUserName();
-        $_SESSION["userEmail"] = $user->getEmail();
+        $_SESSION["user"] = $user;
+        $_SESSION["userEmail"] = $user;
 
         header("Location: ../pages/home.php");
 
