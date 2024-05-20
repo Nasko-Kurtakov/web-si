@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `test_01`
+-- Database: `question_answers_db`
 --
-CREATE DATABASE IF NOT EXISTS `test_01` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `test_01`;
+CREATE DATABASE IF NOT EXISTS `question_answers_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `question_answers_db`;
 
 -- --------------------------------------------------------
 
@@ -73,20 +73,20 @@ INSERT INTO `question` (`id`, `question_text`, `level`, `correct_answer`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Users`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `Users` (
+CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `email` varchar(80) NOT NULL,
   `password` char(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `Users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `Users` (`user_id`, `email`, `password`) VALUES
+INSERT INTO `users` (`user_id`, `email`, `password`) VALUES
 (1, 'theAdmin', 'admin'),
 (2, 'theAdmin1', 'admin'),
 (4, 'theAdmin2', '$2y$10$n1pvE0XAyso6.jy1ZpPWvu14c6QoaaoOjuGWG2.Q2BtasMo.JD6zq'),
@@ -110,9 +110,9 @@ ALTER TABLE `question`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `Users`
+-- Indexes for table `users`
 --
-ALTER TABLE `Users`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -133,9 +133,9 @@ ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `Users`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `Users`
+ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
